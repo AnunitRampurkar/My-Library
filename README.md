@@ -1,2 +1,2 @@
-# My-Library
-Bounce Off &amp; Is Touching functions
+# bounceOffAlgorithm
+Algorithm to bounce off two objects

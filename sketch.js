@@ -1,0 +1,30 @@
+var fixedRect, movingRect;
+
+function setup() {
+  createCanvas(1200,800);
+  fixedRect = createSprite(400, 100, 50, 80);
+  fixedRect.shapeColor = "red";
+  //fixedRect.debug = true;
+  movingRect = createSprite(400, 800,80,30);
+  movingRect.shapeColor = "red";
+  //movingRect.debug = true;  
+}
+
+function draw() {
+  background(0,0,0);  
+
+  movingRect.y = mouseY;
+  movingRect.x = mouseX;
+
+  //bounceOff(movingRect, fixedRect);
+  if(isTouching(movingRect, fixedRect)) {
+    movingRect.shapeColor = "blue";
+    fixedRect.shapeColor = "blue";
+  } 
+  else{
+    movingRect.shapeColor = "red";
+    fixedRect.shapeColor = "red";
+  }
+
+  drawSprites();
+}
